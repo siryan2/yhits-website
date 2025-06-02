@@ -1,0 +1,29 @@
+// @use './../variables';
+@use './variables';
+
+// Media queries
+$screen-xs: '360px' !default;
+$screen-sm: '768px' !default;
+$screen-md: '992px' !default;
+$screen-lg: '1200px' !default;
+$screen-xl: '1920px' !default;
+
+// Border
+$border-radius: 5px  !default;
+$border-radius-base: 2px  !default;
+
+// Layout
+$container-width: 1600px  !default;
+
+@use './background';
+@use './base';
+// @use './border';
+@use './color';
+@use './font';
+@use './gap';
+// @use './height';
+@use './layout';
+@use './margin';
+@use './padding';
+// @use './pull';
+@use './width';

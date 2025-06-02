@@ -1,0 +1,34 @@
+@use "../variables" as *;
+
+.grid {
+  display: grid;
+  gap: 2rem;
+
+  &--3col {
+    grid-template-columns: repeat(1, 100%);
+    
+    @media screen and (min-width: $screen-sm) {
+      grid-template-columns: repeat(2, calc(50% - 1rem));
+    }
+    
+    @media screen and (min-width: $screen-md) {
+      grid-template-columns: repeat(3, calc((100% / 3) - 1.5rem));
+    }
+  }
+
+  &--4col {
+    grid-template-columns: repeat(1, 100%);
+    
+    @media screen and (min-width: $screen-sm) {
+      grid-template-columns: repeat(2, calc(50% - 1rem));
+    }
+    
+    @media screen and (min-width: $screen-md) {
+      grid-template-columns: repeat(4, calc(25% - 1.5rem));
+    }
+  }
+}
+
+.container-wide {
+  max-width: var(--container-width);
+}

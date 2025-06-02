@@ -1,0 +1,69 @@
+@use './variables' as *;
+
+/**
+ * @description: Pull utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2019-11-10
+ */
+@for $i from 0 through 15 {
+  .pull-up-#{$i} {
+    transform: translate3d(0, -1rem * $i, 0);
+
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+
+    &--sm {
+      @media screen and (max-width: $screen-md) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+
+    &--md {
+      @media screen and (min-width: $screen-md) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+
+    &--lg {
+      @media screen and (min-width: $screen-lg) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+  }
+  $i: $i + 1;
+}
+
+@for $i from 0 through 15 {
+  .pull-down-#{$i} {
+    transform: translate3d(0, 1rem * $i, 0);
+
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+
+    &--sm {
+      @media screen and (max-width: $screen-md) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+
+    &--md {
+      @media screen and (min-width: $screen-md) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+
+    &--lg {
+      @media screen and (min-width: $screen-lg) {
+        transform: translate3d(0, -1rem * $i, 0);
+      }
+    }
+  }
+  $i: $i + 1;
+}

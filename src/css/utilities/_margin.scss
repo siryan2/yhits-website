@@ -1,0 +1,432 @@
+@use './variables' as *;
+
+/**
+ * @description: Margin utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2024-02
+ */
+ .no-margin {
+  margin: 0 !important;
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      margin: 0;
+    }
+  }
+}
+
+.ma-half {
+  margin: calc(var(--distance-1)/2);
+}
+
+
+// Basic
+@for $i from 0 through 20 {
+  .ma-#{$i} {
+    margin: calc(var(--distance-1) * $i);
+  }
+
+  .my-#{$i} {
+    margin-top: calc(var(--distance-1) * $i) !important;
+    margin-bottom: calc(var(--distance-1) * $i) !important;
+  }
+
+  .-my-#{$i} {
+    margin-top: calc(var(--distance-1) * -#{$i}) !important;
+    margin-bottom: calc(var(--distance-1) * -#{$i}) !important;
+  }
+
+  .mx-#{$i} {
+    margin-right: calc(var(--distance-1) * $i) !important;
+    margin-left: calc(var(--distance-1) * $i) !important;
+  }
+
+  .-mx-#{$i} {
+    margin-right: calc(var(--distance-1) * -#{$i}) !important;
+    margin-left: calc(var(--distance-1) * -#{$i}) !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: calc(var(--distance-1) * $i) !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: calc(var(--distance-1) * $i) !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: calc(var(--distance-1) * $i) !important;
+  }
+
+  .ml-#{$i} {
+    margin-left: calc(var(--distance-1) * $i) !important;
+  }
+
+  $i: $i + 1;
+}
+
+// XS
+@for $i from 0 through 20 {
+  .ma-#{$i} {
+
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        margin: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .my-#{$i} {
+    
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mx-#{$i} {
+    
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mt-#{$i} {
+    
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mr-#{$i} {
+    
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mb-#{$i} {
+    
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .ml-#{$i} {
+    
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+// SM
+@for $i from 0 through 20 {
+  .ma-#{$i} {
+
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        margin: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .my-#{$i} {
+    
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mx-#{$i} {
+    
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mt-#{$i} {
+    
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mr-#{$i} {
+    
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mb-#{$i} {
+    
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .ml-#{$i} {
+    
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+// MD
+@for $i from 0 through 20 {
+  .ma-#{$i} {
+
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        margin: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .my-#{$i} {
+    
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mx-#{$i} {
+    
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mt-#{$i} {
+    
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mr-#{$i} {
+    
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mb-#{$i} {
+    
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .ml-#{$i} {
+    
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+// LG
+@for $i from 0 through 20 {
+  .ma-#{$i} {
+
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        margin: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .my-#{$i} {
+    
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mx-#{$i} {
+    
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mt-#{$i} {
+    
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        margin-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mr-#{$i} {
+    
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        margin-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .mb-#{$i} {
+    
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        margin-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .ml-#{$i} {
+    
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        margin-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+/**
+ * MARGIN TOP
+ */
+.mt-half {
+  margin-top: calc(var(--distance-1) / 2);
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      margin-top: calc(var(--distance-1) / 2);
+    }
+  }
+}
+
+.mt-small {
+  margin-top: var(--distance-sm) !important;
+}
+
+/**
+ * MARGIN BOTTOM
+ */
+.mb-half {
+  margin-bottom: calc(var(--distance-1) / 2);
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      margin-bottom: calc(var(--distance-1) / 2);
+    }
+  }
+}
+
+.mb-small {
+  margin-bottom: var(--distance-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--distance-md);
+}
+
+/**
+ * MARGIN RIGHT
+ */
+.mr-half {
+  margin-right: calc(var(--distance-1) / 2);
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      margin-right: calc(var(--distance-1) / 2);
+    }
+  }
+}
+
+.mr-small {
+  margin-right: var(--distance-sm);
+}
+
+.mr-md {
+  margin-right: var(--distance-md);
+}
+
+/**
+ * MARGIN LEFT
+ */
+.ml-small {
+  margin-left: var(--distance-sm);
+}
+
+.ml-md {
+  margin-left: var(--distance-md);
+}
+
+.ml-half {
+  margin-left: calc(var(--distance-1) / 2);
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      margin-left: calc(var(--distance-1) / 2);
+    }
+  }
+}
+
+.mx-half {
+  margin-right: calc(var(--distance-1)/2) !important;
+  margin-left: calc(var(--distance-1)/2) !important;
+}

@@ -1,0 +1,250 @@
+@use './variables' as *;
+
+/**
+ * @description: Base utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2023-02
+ */
+
+ .align-right {
+   justify-content: flex-end;
+   
+   &--sm {
+     @media screen and (min-width: $screen-sm) {
+       justify-content: flex-end;
+      }
+    }
+    
+    &--md {
+      @media screen and (min-width: $screen-md) {
+        justify-content: flex-end;
+      }
+    }
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+
+  &--xs {
+    @media screen and (max-width: $screen-sm) {
+      text-align: center;
+    }
+  }
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      text-align: center;
+    }
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-overflow--ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-no-wrap {
+  white-space: nowrap;
+}
+
+.text-small {
+  font-size: 0.8rem;
+}
+
+.o-hidden {
+  overflow: hidden !important;
+}
+
+.o-visible {
+  overflow: visible !important;
+}
+
+.o-visible--y {
+  overflow-y: visible !important;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.no-radius {
+  border-radius: 0;
+}
+
+.flex {
+  display: flex !important;
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      display: flex;
+    }
+  }
+
+  &--md {
+    @media screen and (min-width: $screen-md) {
+      display: flex;
+    }
+  }
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+@for $i from 1 through 4 {
+  .flex-grow-#{$i} {
+    flex-grow: 1 * $i;
+
+    &--sm {
+      @media screen and (min-width: $screen-sm) {
+        flex-grow: 1 * $i;
+      }
+    }
+
+    &--md {
+      @media screen and (min-width: $screen-md) {
+        flex-grow: 1 * $i;
+      }
+    }
+
+    &--lg {
+      @media screen and (min-width: $screen-lg) {
+        flex-grow: 1 * $i;
+      }
+    }
+
+    &--xl {
+      @media screen and (min-width: $screen-xl) {
+        flex-grow: 1 * $i;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+.wrap {
+  white-space: normal;
+}
+
+.no-wrap {
+  white-space: nowrap;
+
+  &--sm {
+    @media screen and (min-width: $screen-sm) {
+      white-space: nowrap;
+    }
+  }
+
+  &--md {
+    @media screen and (min-width: $screen-md) {
+      white-space: nowrap;
+    }
+  }
+}
+
+.space-between,
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.justify-start {
+  justify-content: flex-start !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      justify-content: center !important;
+    }
+  }
+
+  &--md {
+    @media screen and (min-width: $screen-md) {
+      justify-content: center !important;
+    }
+  }
+}
+
+.justify-end {
+  justify-content: flex-end !important;
+}
+
+.d-block {
+  display: block !important;
+
+  @media screen and (max-width: $screen-md) {
+    &--sm {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    &--md {
+      display: block;
+    }
+  }
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: block;
+
+  @media screen and (max-width: $screen-md) {
+    &--sm {
+      display: inline-block;
+    }
+  }
+
+  @media screen and (min-width: $screen-md) {
+    &--md {
+      display: inline-block;
+    }
+  }
+}
+
+.pos-r {
+  position: relative;
+}

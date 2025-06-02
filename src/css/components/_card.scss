@@ -1,0 +1,67 @@
+@use "../variables" as *;
+
+a.card {
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 0px 10px var(--c-medium-gray);
+    text-decoration: none;
+  }
+}
+
+.card {
+  border-radius: var(--border-radius-card);
+  border: 1px solid var(--c-medium-gray);
+  background-color: var(--c-white);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem 2.5rem 0;
+  }
+
+  &__headline {
+    font-family: var(--font-brand-bold);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    word-break: break-word;
+  }  
+
+  &__icon {
+    
+    svg {
+      border-radius: 50%;
+      background-color: var(--c-blue-50);
+      width: 64px;
+      height: auto;
+      padding: 10px;
+    }
+  }
+
+  &__image-container {
+    border-radius: var(--border-radius-card-image);
+    padding: 12px 12px 0px;
+  }
+
+  &__image {
+    border-radius: var(--border-radius-card-image);
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__content {
+    font-family: var(--font-brand-light);
+    font-size: clamp(1rem, 1vw, 1.2rem);
+    flex: 1;
+    margin-top: 1rem;
+    padding: 0 2.5rem 2.5rem;
+  }
+
+  &__footer {
+    padding: 0 2.5rem 1.5rem;
+  }
+}

@@ -1,0 +1,65 @@
+@use './variables' as *;
+
+/**
+ * @description: Layout utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2022-03
+ */
+.show-xs,
+.show-sm,
+.show-md,
+.show-lg,
+.show-xl {
+  display: none !important;
+}
+
+@media (max-width: $screen-xl) {
+  .hide-xl {
+    display: none !important;
+  }
+
+  .show-xl {
+    display: block !important;
+  }
+}
+
+@media (max-width: $screen-lg) {
+  .hide-lg {
+    display: none !important;
+  }
+
+  .show-lg {
+    display: block !important;
+  }
+}
+
+@media (max-width: $screen-md) {
+  .hide-md {
+    display: none !important;
+  }
+
+  .show-md {
+    display: block !important;
+  }
+}
+
+@media (max-width: $screen-sm) {
+  .hide-sm {
+    display: none !important;
+  }
+
+  .show-sm {
+    display: block !important;
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .hide-xs {
+    display: none !important;
+  }
+
+  .show-xs {
+    display: block !important;
+  }
+}

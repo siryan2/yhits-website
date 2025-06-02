@@ -1,0 +1,106 @@
+.headline {
+  color: var(--c-black);
+  font-family: var(--font-brand);
+  font-weight: unset;
+  line-height: 1.2em;
+  margin-top: 0;
+  // hyphens: auto;
+  word-break: break-word;
+  text-rendering: optimizeLegibility;
+
+  &--medium {
+    font-size: clamp(1.2rem, 1.5vw, 2.5rem) !important;
+  }
+
+  &--big {
+    font-size: clamp(1.6rem, 2vw, 2.5rem) !important;
+  }
+
+  &--bigger {
+    font-size: clamp(2rem, 3vw, 3.5rem) !important;
+  }
+
+  &--biggest {
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    line-height: 1;
+  }
+
+  &--sub {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+  }
+
+  &--brand {
+    font-family: var(--font-brand);
+  }
+
+  &--brand-bold {
+    font-family: var(--font-brand-bold);
+  }
+
+  &--brand-bold-italic {
+    font-family: var(--font-brand-bold);
+    font-style: italic;
+  }
+
+  &--brand-black {
+    font-family: var(--font-brand-black);
+  }
+
+  &--brand-black-italic {
+    font-family: var(--font-brand-black-italic);
+  }
+
+  &--brand-light {
+    font-family: var(--font-brand-light);
+  }
+
+  &--brand-light-italic {
+    font-family: var(--font-brand-light);
+    font-style: italic;
+  }
+
+  &--brand-secondary {
+    font-family: var(--font-secondary);
+  }
+
+  &--brand-secondary-light {
+    font-family: var(--font-secondary-light);
+  }
+
+  &--brand-secondary-bold {
+    font-family: var(--font-secondary-bold);
+  }
+
+  .section--light & {
+    color: var(--c-white);
+  }
+
+  > a {
+    font-family: inherit;
+  }
+}
+
+.font-brand {
+  font-family: var(--font-brand);
+
+  &-bold {
+    font-family: var(--font-brand-bold) !important;
+  }
+
+  &-bold-italic {
+    font-family: var(--font-brand-bold) !important;
+    font-style: italic;
+  }
+
+  &-black {
+    font-family: var(--font-brand-black) !important;
+  }
+
+  &-black-italic {
+    font-family: var(--font-brand-black-italic) !important;
+  }
+
+  &-light {
+    font-family: var(--font-brand-light) !important;
+  }
+}

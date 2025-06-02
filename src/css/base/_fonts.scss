@@ -1,0 +1,46 @@
+$base-path: './../fonts';
+
+@font-face {
+  font-family: 'ChangaOneItalic';
+  src: url('#{$base-path}/changa-one-v10-latin-italic.woff2') format('woff2');
+}
+
+// @font-face {
+//   font-family: 'ChangaOneRegular';
+//   src: url('#{$base-path}/changa-one-v10-latin-regular.woff2') format('woff2');
+// }
+
+// @font-face {
+//   font-family: 'NotoSansBold';
+//   src: url('#{$base-path}/noto-sans-v7-latin-700.woff2') format('woff2');
+// }
+
+// @font-face {
+//   font-family: 'RobotoSlabRegular';
+//   src: url('#{$base-path}/roboto-slab-v7-latin-regular.woff2') format('woff2');
+// }
+
+// @font-face {
+//   font-family: 'RobotoRegular';
+//   src: url('#{$base-path}/roboto-v18-latin-regular.woff2') format('woff2');
+// }
+
+@font-face {
+  font-family: 'FFDINWebBlack';
+  src: url('#{$base-path}/dinot-black-webfont.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FFDINWebBold';
+  src: url('#{$base-path}/333461_2_0.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FFDINWebLight';
+  src: url('#{$base-path}/333461_3_0.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'FFDINWebRegular';
+  src: url('#{$base-path}/333461_4_0.woff2') format('woff2');
+}

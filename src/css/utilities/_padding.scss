@@ -1,0 +1,414 @@
+@use './variables' as *;
+
+/**
+ * @description: Padding utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2024-02
+ */
+ .no-padding {
+  padding: 0 !important;
+}
+
+// Basic
+@for $i from 0 through 20 {
+  .pa-#{$i} {
+    padding: calc(var(--distance-1) * $i) !important;
+  }
+
+  .py-#{$i} {
+    padding-top: calc(var(--distance-1) * $i) !important;
+    padding-bottom: calc(var(--distance-1) * $i) !important;
+  }
+
+  .px-#{$i} {
+    padding-right: calc(var(--distance-1) * $i) !important;
+    padding-left: calc(var(--distance-1) * $i) !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: calc(var(--distance-1) * $i) !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: calc(var(--distance-1) * $i) !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: calc(var(--distance-1) * $i) !important;
+  }
+
+  .pl-#{$i} {
+    padding-left: calc(var(--distance-1) * $i) !important;
+  }
+
+  $i: $i + 1;
+}
+
+// XS
+@for $i from 0 through 20 {
+  .pa-#{$i} {
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        padding: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .py-#{$i} {
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .px-#{$i} {
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pt-#{$i} {
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pr-#{$i} {
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pb-#{$i} {
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pl-#{$i} {
+    &--xs {
+      @media screen and (max-width: $screen-xs) {
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+
+// SM
+@for $i from 0 through 20 {
+  .pa-#{$i} {
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        padding: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .py-#{$i} {
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .px-#{$i} {
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pt-#{$i} {
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pr-#{$i} {
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pb-#{$i} {
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pl-#{$i} {
+    &--sm {
+      @media screen and (max-width: $screen-sm) {
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+// MD
+@for $i from 0 through 20 {
+  .pa-#{$i} {
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        padding: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .py-#{$i} {
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .px-#{$i} {
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pt-#{$i} {
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pr-#{$i} {
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pb-#{$i} {
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pl-#{$i} {
+    &--md {
+      @media screen and (max-width: $screen-md) {
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+// LG
+@for $i from 0 through 20 {
+  .pa-#{$i} {
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        padding: calc(var(--distance-1) * $i);
+      }
+    }
+  }
+
+  .py-#{$i} {
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .px-#{$i} {
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pt-#{$i} {
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        padding-top: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pr-#{$i} {
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        padding-right: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pb-#{$i} {
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        padding-bottom: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  .pl-#{$i} {
+    &--lg {
+      @media screen and (max-width: $screen-lg) {
+        padding-left: calc(var(--distance-1) * $i) !important;
+      }
+    }
+  }
+
+  $i: $i + 1;
+}
+
+.p-half {
+  padding: calc(var(--distance-1) / 2) !important;
+
+  &--sm,
+  &:sm {
+    @media screen and (max-width: $screen-md) {
+      padding: calc(var(--distance-1) / 2);
+    }
+  }
+}
+
+/**
+ * PADDING Y
+ */
+ .py-half {
+  padding-top: calc(var(--distance-1) / 2) !important;
+  padding-bottom: calc(var(--distance-1) / 2) !important;
+}
+
+/**
+ * PADDING X
+ */
+.px-half {
+  padding-right: calc(var(--distance-1) / 2) !important;
+  padding-left: calc(var(--distance-1) / 2) !important;
+}
+
+/**
+ * PADDING TOP
+ */
+.pt-small {
+  padding-top: var(--distance-sm) !important;
+}
+
+.pt-half {
+  padding-top: calc(var(--distance-1) / 2) !important;
+}
+
+/**
+ * PADDING BOTTOM
+ */
+.pb-small {
+  padding-bottom: var(--distance-sm) !important;
+}
+
+.pb-half {
+  padding-bottom: calc(var(--distance-1) / 2) !important;
+}
+
+/**
+ * PADDING LEFT
+ */
+.pl-small {
+  padding-left: var(--distance-sm) !important;
+}
+
+.pl-half {
+  padding-left: calc(var(--distance-1) / 2) !important;
+
+  &--xs {
+    @media screen and (max-width: $screen-xs) {
+      padding-left: calc(var(--distance-1) / 2) !important;
+    }
+  }
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      padding-left: calc(var(--distance-1) / 2) !important;
+    }
+  }
+
+  &--md {
+    @media screen and (min-width: $screen-md) {
+      padding-left: calc(var(--distance-1) / 2) !important;
+    }
+  }
+
+  &--lg {
+    @media screen and (min-width: $screen-lg) {
+      padding-left: calc(var(--distance-1) / 2) !important;
+    }
+  }
+}
+
+/**
+ * PADDING RIGHT
+ */
+.pr-half {
+  padding-right: calc(var(--distance-1) / 2) !important;
+
+  &--xs {
+    @media screen and (max-width: $screen-xs) {
+      padding-right: calc(var(--distance-1) / 2) !important;
+    }
+  }
+
+  &--sm {
+    @media screen and (max-width: $screen-md) {
+      padding-right: calc(var(--distance-1) / 2) !important;
+    }
+  }
+
+  &--md {
+    @media screen and (min-width: $screen-md) {
+      padding-right: calc(var(--distance-1) / 2) !important;
+    }
+  }
+
+  &--lg {
+    @media screen and (min-width: $screen-lg) {
+      padding-right: calc(var(--distance-1) / 2) !important;
+    }
+  }
+}

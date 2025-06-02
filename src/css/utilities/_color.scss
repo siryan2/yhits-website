@@ -1,0 +1,59 @@
+/**
+ * @description: Color utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2023-06
+ */
+
+$colors: (
+  'blue': 'blue',
+  'blue-light': 'blue-light'
+);
+
+@each $key, $value in $colors {
+  .color-#{$key} {
+    color: var(--c-#{$value}) !important;
+  }
+}
+
+.color-black {
+  color: var(--c-black, #000000);
+}
+
+.color-gray {
+  color: var(--c-gray, #333333);
+}
+
+.color-dark-gray {
+  color: var(--c-dark-gray, #111111);
+}
+
+.color-medium-gray {
+  color: var(--c-medium-gray, #999999);
+}
+
+.color-light-gray {
+  color: var(--c-light-gray, #eeeeee);
+}
+
+.color-white {
+  color: var(--c-white, #fefefe) !important;
+}
+
+// Brand
+.color-brand {
+  color: var(--c-brand, #1e297d);
+}
+
+// Status
+.color-danger {
+  color: var(--c-danger, #a1002e);
+}
+
+.color-success {
+  color: var(--c-success, #059068);
+}
+
+.color-info {
+  color: var(--c-info, #2f93e9);
+}

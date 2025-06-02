@@ -1,0 +1,54 @@
+/**
+ * @description: Font utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2023-06
+ */
+.font--smaller {
+  font-size: .625rem;
+}
+
+.font--small {
+  font-size: .8rem !important;
+}
+
+.font--regular {
+  font-size: 1rem;
+}
+
+.font--regular-plus {
+  font-size: 1.2rem;
+}
+
+.font--big {
+  font-size: 1.5rem;
+}
+
+.font--bigger {
+  font-size: 1.8rem;
+}
+
+.font--300 {
+  font-weight: 300;
+}
+
+.font--400 {
+  font-weight: 400 !important;
+}
+
+.font--500 {
+  font-weight: 500 !important;
+}
+
+.font--700 {
+  font-weight: 700;
+}
+
+.font-brand {
+  font-family: var(--font-brand, 'Arial');
+  font-weight: 400;
+}
+
+.font--bold {
+  font-weight: 700;
+}

@@ -1,0 +1,42 @@
+/**
+ * @description: Background utilities
+ * @project: Utility Framework
+ * @author: Yannick Herzog
+ * @modified: 2023-06
+ */
+.bg-color-white {
+  background-color: #ffffff;
+}
+
+.bg-color-gray {
+  background-color: var(--c-gray, #666666);
+}
+
+.bg-color-light-gray {
+  background-color: var(--c-light-gray, #eeeeee);
+}
+
+.bg-color-lighter-gray {
+  background-color: var(--c-lighter-gray, #f1f1f1);
+}
+
+.bg-color-brand {
+  background-color: var(--c-brand, #2860c3);
+}
+
+.bg-color-brand-dark {
+  background-color: var(--c-brand-dark, #0e2c61);
+}
+
+.bg-color-success {
+  background-color: var(--c-success, #15d859);
+}
+
+.bg-color-blue-50 {
+  background-color: var(--c-blue-50);
+}
+
+.bg-color-gradient {
+  // background-image: linear-gradient(161.81deg, var(--c-blue-200) 25%,var(--c-brand-secondary) 75%);
+  background-image: linear-gradient(163deg, var(--c-brand) 25%,var(--c-brand-secondary) 75%);
+}

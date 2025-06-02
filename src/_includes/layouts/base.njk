@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow">
+    <meta name="description" content="{{ description }}">
+    <meta name="author" content="Yannick Herzog">
+    <meta name="google-site-verification" content="lct-nC0PoAXywoZpepyfxDeleLPQZEZW_y879g4KDDM" />
+    <title>{{ title }} | Yannick Herzog</title>
+    <link rel="stylesheet" href="{{ '/css/flexboxgrid.min.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta property="og:title" content="{{ title }} | Yannick Herzog">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url | url }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="/img/logo.svg">
+    <meta property="og:image:secure_url" content="/img/logo.svg">
+  </head>
+
+  <body>
+    {% include "header.njk" %}
+    
+    <main class="page-main">{{ content | safe }}</main>
+
+    {% include "footer.njk" %}
+  </body>
+
+  <!-- Matomo -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//stats.hit-services.net/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '3']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->
+
+  <noscript>
+    <!-- Matomo Image Tracker-->
+    <img referrerpolicy="no-referrer-when-downgrade" src="https://stats.hit-services.net/matomo.php?idsite=3&amp;rec=1" style="border:0" alt="" />
+    <!-- End Matomo -->
+  </noscript>
+</html>

@@ -1,0 +1,54 @@
+@use "../variables" as *;
+
+.hero {
+  background-color: var(--c-blue-50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 2vw + 1rem, 4rem) 1rem;
+
+  @media screen and (min-width: $screen-md) {
+    min-height: 30rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__headline {
+    font-family: var(--font-brand-bold);
+    font-size: clamp(1.5rem, 1.5vw + 1rem, 3rem);
+    line-height: 1.2em;
+  }
+
+  &__subheadline {
+    font-family: var(--font-brand-light);
+    font-size: clamp(1.5rem, 1.5vw, 2rem);
+    margin-top: 2rem;
+    line-height: 1.2em;
+  }
+
+  &__headline,
+  &__subheadline {
+    color: var(--c-black);
+    width: 100%;
+    
+    @media screen and (min-width: $screen-md) {
+      max-width: 80vw;      
+    }
+  }
+
+  &__btn-group {
+    display: flex;
+    // flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: $screen-md) {
+      flex-direction: row;
+      gap: 3rem;      
+    }
+  }
+}

@@ -1,0 +1,52 @@
+:root {
+  --c-brand: #123654;
+  --c-brand-secondary: #E34275;
+  --c-black: #212121;
+  --c-white: #fff;
+
+  --c-blue-50: #e5f5ff;
+  --c-blue-100: #b3e0ff;
+  --c-blue-200: #80ccff;
+  --c-blue-300: #4db7ff;
+  --c-blue-400: #1aa3ff;
+  --c-blue-500: #0089e6;
+  --c-blue-600: #006bb3;
+  --c-blue-700: #004c80;
+  --c-blue-800: #002e4d;
+
+  --c-blue: var(--c-brand);
+
+  --c-dark-gray: #333333;
+  --c-gray: #999999;
+  --c-medium-gray: #dfdfdf;
+  --c-light-gray: #f5f5f5;
+
+  --c-border: var(--c-gray);
+
+  // Status
+  --c-danger: #f22613;
+  --c-info: #2c82c9;
+  --c-success: #3fc380;
+  --c-warning: #f5e653;
+
+	--font-brand: 'FFDINWebRegular', sans-serif;
+	--font-brand-light: 'FFDINWebLight', sans-serif;
+	--font-brand-bold: 'FFDINWebBold', sans-serif;
+	--font-brand-black: 'FFDINWebBlack', sans-serif;
+	--font-brand-secondary: 'ChangaOneItalic', sans-serif;
+  --font-nav: var(--font-brand-black);
+
+  --distance-sm: 0.3rem;
+  --distance-md: 0.6rem;
+  
+  @for $i from 1 through 10 {
+    --distance-#{$i}: #{$i}rem;
+  }
+
+  --border-radius: 4px;
+  --border-radius-base: 2px;
+  --border-radius-card: 25px;
+  --border-radius-card-image: 21px;
+
+  --container-width: 100rem;
+}
