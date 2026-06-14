@@ -1,0 +1,32 @@
+name: Deploy to Production
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    env:
+      NUXT_APP_NAME: ${{ secrets.NUXT_APP_NAME }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install and Build
+        uses: actions/setup-node@v1
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run build
+
+      - name: Deploy
+        uses: Dylan700/sftp-upload-action@latest
+        with:
+          server: ${{ secrets.HOST }}
+          port: ${{ secrets.PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+          uploads: |
+            ./dist/ => ${{ secrets.REMOTE_DIR }}
+          delete: true
