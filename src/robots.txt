@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /css/
+Disallow: /fonts/
+
+Host: https://www.hit-services.net/
+
+Sitemap: https://www.hit-services.net/sitemap.xml

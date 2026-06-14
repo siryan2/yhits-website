@@ -1,0 +1,62 @@
+.code-card {
+  background: oklch(26% 0.014 60);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px -24px oklch(30% 0.05 50 / 0.45), 0 4px 14px oklch(30% 0.02 50 / 0.10);
+  font-family: var(--font-brand-mono);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.code-card__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 16px;
+  background: oklch(31% 0.013 60);
+  border-bottom: 1px solid oklch(38% 0.013 60);
+}
+
+.code-card__body {
+  padding: 20px 22px 24px;
+  color: oklch(82% 0.01 70);
+  overflow-x: auto;
+
+  .ln {
+    display: block;
+    white-space: pre;
+  }
+}
+
+.code-card__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.code-card__file {
+  margin-left: 10px;
+  color: oklch(70% 0.01 60);
+  font-size: 12px;
+}
+
+.c-com {
+  color: oklch(58% 0.02 80);
+  font-style: italic;
+}
+
+.c-key {
+  color: oklch(72% 0.12 320);
+}
+
+.c-fn {
+  color: oklch(78% 0.12 230);
+}
+
+.c-str {
+  color: oklch(78% 0.11 140);
+}
+
+.c-acc {
+  color: oklch(74% 0.14 50);
+}

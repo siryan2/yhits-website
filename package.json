@@ -1,6 +1,6 @@
 {
   "name": "relaunch2025",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "main": "index.js",
   "scripts": {
     "dev": "npx @11ty/eleventy --serve",
@@ -16,6 +16,10 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-img": "^6.0.2",
     "@11ty/eleventy-navigation": "^1.0.4",
-    "sass": "^1.87.0"
+    "@quasibit/eleventy-plugin-sitemap": "^2.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "sass": "^1.101.0"
   }
 }

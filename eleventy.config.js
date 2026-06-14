@@ -3,47 +3,52 @@ import * as sass from "sass";
 import eleventyNavigationPlugin from "@11ty/eleventy-navigation";
 import { HtmlBasePlugin } from "@11ty/eleventy";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
 
-export default async function(eleventyConfig) {
-	// Configure Eleventy
+export default async function (eleventyConfig) {
+  // Configure Eleventy
   eleventyConfig.setOutputDirectory("dist");
   eleventyConfig.setInputDirectory("src");
 
   eleventyConfig.addPassthroughCopy({
     "./public/": "/"
   });
+  eleventyConfig.addPassthroughCopy({ 'src/robots.txt': '/robots.txt' });
   // eleventyConfig.addPassthroughCopy("public");
 
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  // Sitemap
+  eleventyConfig.addPlugin(sitemap, {
+    lastModifiedProperty: "modified",
+    sitemap: {
+      hostname: "https://www.hit-services.net"
+    }
+  });
+
   // Images
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
-		// output image formats
-		formats: ["webp", "jpeg"],
+    // output image formats
+    formats: ["webp", "jpeg"],
 
     outputDir: "./dist/img/",
     urlPath: "/img/",
 
-		// output image widths
-		widths: [320, 640, 960, 1200],
+    // output image widths
+    widths: [320, 640, 960, 1200],
 
-    sizes: [
-      "(max-width: 320px) 100vw",
-      "(max-width: 640px) 100vw",
-      "(max-width: 960px) 100vw",
-      "(max-width: 1200px) 100vw",
-    ],
+    sizes: ["(max-width: 320px) 100vw", "(max-width: 640px) 100vw", "(max-width: 960px) 100vw", "(max-width: 1200px) 100vw"],
 
-		// optional, attributes assigned on <img> nodes override these values
-		htmlOptions: {
-			imgAttributes: {
-				loading: "lazy",
-				decoding: "async",
-			},
-			pictureAttributes: {}
-		}
-	});
+    // optional, attributes assigned on <img> nodes override these values
+    htmlOptions: {
+      imgAttributes: {
+        loading: "lazy",
+        decoding: "async",
+      },
+      pictureAttributes: {}
+    }
+  });
 
   // Recognize Sass as a "template languages"
   eleventyConfig.addTemplateFormats("scss");
@@ -71,29 +76,29 @@ export default async function(eleventyConfig) {
       return async () => {
         return result.css;
       };
-    }
+    },
   });
 
   // Exclude CSS files (for Sitemap.xml)
-  eleventyConfig.addCollection("noCssPages", function(collectionApi) {
-    return collectionApi.getAll().filter(item => !item.url.startsWith("/css/"));
+  eleventyConfig.addCollection("noCssPages", function (collectionApi) {
+    return collectionApi.getAll().filter((item) => !item.url.startsWith("/css/"));
   });
-};
+
+  eleventyConfig.addCollection("sitemap", function(collectionApi) {
+    return collectionApi.getAll().filter(item => {
+      return item.url.endsWith('.html');
+    });
+  });
+}
 
 export const config = {
   // Control which files Eleventy will process
   // e.g.: *.md, *.njk, *.html, *.liquid
-  templateFormats: [
-    "md",
-    "njk",
-    "html",
-    "liquid",
-    "11ty.js"
-  ],
+  templateFormats: ["md", "njk", "html", "liquid", "11ty.js"],
 
   // Pre-process *.md files with: (default: `liquid`)
   markdownTemplateEngine: "njk",
 
   // Pre-process *.html files with: (default: `liquid`)
-  htmlTemplateEngine: "njk"
+  htmlTemplateEngine: "njk",
 };

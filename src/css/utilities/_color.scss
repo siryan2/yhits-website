@@ -1,14 +1,11 @@
+@use './variables' as *;
+
 /**
  * @description: Color utilities
  * @project: Utility Framework
  * @author: Yannick Herzog
  * @modified: 2023-06
  */
-
-$colors: (
-  'blue': 'blue',
-  'blue-light': 'blue-light'
-);
 
 @each $key, $value in $colors {
   .color-#{$key} {

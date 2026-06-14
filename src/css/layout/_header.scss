@@ -1,17 +1,17 @@
 @use "../variables" as *;
 
 .page-header {
-  border-top: 8px solid var(--c-blue-700);
+  // border-top: 8px solid var(--c-blue-700);
+  border-bottom: 1px solid var(--c-medium-gray);
   padding-top: 1rem;
+  padding-bottom: 1rem;
 
   &-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    max-width: var(--container-width);
-    width: 100%;
     padding: 0 2rem;
+    width: 100%;
 
     @media screen and (min-width: $screen-md) {
       flex-direction: row;
@@ -22,4 +22,9 @@
       padding: 0;
     }
   }
+}
+
+.page-logo {
+  height: 60px;
+  width: 60px;
 }

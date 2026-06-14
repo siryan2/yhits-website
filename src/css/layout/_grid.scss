@@ -29,6 +29,11 @@
   }
 }
 
+.container-small {
+  max-width: var(--container-small-width);
+  margin: 0 auto;
+}
+
 .container-wide {
   max-width: var(--container-width);
 }

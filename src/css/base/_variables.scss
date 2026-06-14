@@ -4,6 +4,22 @@
   --c-black: #212121;
   --c-white: #fff;
 
+  /* @todo: Warm colors*/
+  --bg: oklch(98.6% 0.008 75);
+  --bg-2: oklch(96.4% 0.013 72);
+  --ink: oklch(24% 0.012 55);
+  --ink-mid: oklch(49% 0.012 55);
+  --rule: oklch(90% 0.009 70);
+  --rule-soft: oklch(93.5% 0.008 72);
+  --accent: oklch(57% 0.145 42);
+  --accent-line: oklch(85% 0.060 50);
+  --rule: oklch(90% 0.009 70);
+
+  /* Cool colors */
+  --c-blue-10: #f7fcff;
+  --c-blue-20: #edf8ff;
+  --c-blue-30: #eaf7ff;
+  --c-blue-40: #e8f6ff;
   --c-blue-50: #e5f5ff;
   --c-blue-100: #b3e0ff;
   --c-blue-200: #80ccff;
@@ -34,6 +50,7 @@
 	--font-brand-bold: 'FFDINWebBold', sans-serif;
 	--font-brand-black: 'FFDINWebBlack', sans-serif;
 	--font-brand-secondary: 'ChangaOneItalic', sans-serif;
+  --font-brand-mono: 'JetBrains Mono', monospace;
   --font-nav: var(--font-brand-black);
 
   --distance-sm: 0.3rem;
@@ -49,4 +66,8 @@
   --border-radius-card-image: 21px;
 
   --container-width: 100rem;
+  --container-small-width: 80rem;
+
+  // Easing
+  --ease: cubic-bezier(0.4, 0, 0.2, 1)
 }
