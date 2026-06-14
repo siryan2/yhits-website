@@ -44,3 +44,8 @@ $base-path: './../fonts';
   font-family: 'FFDINWebRegular';
   src: url('#{$base-path}/333461_4_0.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('#{$base-path}/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+}

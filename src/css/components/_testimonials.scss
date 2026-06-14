@@ -1,0 +1,21 @@
+@use "../variables" as *;
+
+.testimonials {
+  display: flex;
+  gap: 2rem;
+
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+
+  > .card {
+    scroll-snap-align: start;
+    scroll-margin-left: 50px;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    @media screen and (max-width: $screen-sm) {
+      min-width: calc(85vw - 2rem);
+    }  
+  }
+}

@@ -27,7 +27,7 @@ a.card {
 
   &__headline {
     font-family: var(--font-brand-bold);
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(0.8rem, 1.5vw, 1.1rem);
     word-break: break-word;
   }  
 
@@ -39,6 +39,15 @@ a.card {
       width: 64px;
       height: auto;
       padding: 10px;
+    }
+  }
+
+  &__quote {
+    color: var(--c-brand-secondary);
+
+    svg {
+      width: 2.5em;
+      height: auto;
     }
   }
 
@@ -62,6 +71,10 @@ a.card {
   }
 
   &__footer {
-    padding: 0 2.5rem 1.5rem;
+    padding: 1rem 2.5rem 1.5rem;
+    
+    &--border {
+      border-top: 1px solid var(--c-medium-gray);      
+    }
   }
 }

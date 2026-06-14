@@ -1,9 +1,18 @@
+@use './variables' as *;
+
 /**
  * @description: Background utilities
  * @project: Utility Framework
  * @author: Yannick Herzog
  * @modified: 2023-06
  */
+
+ @each $key, $value in $colors {
+  .bg-color-#{$key} {
+    background-color: var(#{$value}) !important;
+  }
+}
+
 .bg-color-white {
   background-color: #ffffff;
 }
