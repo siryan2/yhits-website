@@ -4,11 +4,12 @@ permalink: /projekte/
 title: "Meine Arbeiten"
 eleventyNavigation:
   key: "Projekte"
+  order: 1
 ---
 <section class="container-small container-fluid">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="headline headline--medium headline--brand-bold">{{ title }}</h1>    
+      <h1 class="headline headline--medium headline--brand-bold">{{ title }}</h1>
     </div>
   </div>
 
@@ -17,25 +18,24 @@ eleventyNavigation:
       {% set navPages = collections.all | eleventyNavigation("Projekte") %}
       <nav>
         <ul class="grid grid--4col" style="padding-left: 0; margin: 0; list-style: none;">
-        {%- for entry in navPages %}
-          <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-            <a href="{{ entry.url }}" class="card">
-              <div class="card__image-container">
-                <img src="{{entry.coverImage}}" alt="{{ entry.title }}" eleventy:widths="500" class="card__image" />
-              </div>
+          {%- for entry in navPages %}
+            <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
+              <a href="{{ entry.url }}" class="card">
+                <div class="card__image-container">
+                  <img src="{{entry.coverImage}}" alt="{{ entry.title }}" eleventy:widths="500" class="card__image"/>
+                </div>
 
-              <div class="card__content">
-                <p class="card__headline">{{ entry.title }}</p>
-              </div>
+                <div class="card__content">
+                  <p class="card__headline">{{ entry.title }}</p>
+                </div>
 
-              <div class="card__footer">
-                <p class="font--regular">{{ entry.client }}</p>                
-              </div>
-            </a> 
-          </li>
-        {%- endfor %}
+                <div class="card__footer">
+                  <p class="font--regular">{{ entry.client }}</p>
+                </div>
+              </a>
+            </li>
+          {%- endfor %}
         </ul>
-      <nav>
-    </div>
-  </div>
-</section>
+        <nav></div>
+      </div>
+    </section>
