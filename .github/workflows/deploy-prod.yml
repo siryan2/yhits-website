@@ -10,17 +10,18 @@ jobs:
       NUXT_APP_NAME: ${{ secrets.NUXT_APP_NAME }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install and Build
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: '24'
+          cache: 'npm'
       - run: npm ci
       - run: npm run build
 
       - name: Deploy
-        uses: Dylan700/sftp-upload-action@latest
+        uses: Dylan700/sftp-upload-action@v1.2.3
         with:
           server: ${{ secrets.HOST }}
           port: ${{ secrets.PORT }}
