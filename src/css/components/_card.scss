@@ -78,3 +78,76 @@ a.card {
     }
   }
 }
+
+/**
+ * Project Card
+ */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+
+    .project-card__headline {
+      color: var(--c-brand-secondary);
+    }
+
+    .project-card__image {
+      border-color: var(--c-brand-secondary);
+    }
+  }
+
+  &__image {
+    border: 2px solid var(--c-medium-gray);
+    max-width: 100%;
+    height: auto;
+    transition: border 0.2s ease-in-out;
+  }
+
+  &__header {
+    margin-top: 1rem;
+  }
+
+  &__content {
+    flex: 1;
+    margin-top: 0.625rem;
+  }
+
+  &__headline {
+    font-family: var(--font-brand-bold);
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    word-break: break-word;
+    hyphens: auto;
+    transition: color 0.2s ease-in-out;
+  }
+
+  &__teaser {
+    font-family: var(--font-brand);
+    font-size: clamp(0.8rem, 1.4vw, 1rem);
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+    code {
+      font-size: clamp(0.6rem, 1.2vw, 0.7rem);
+      color: var(--c-gray);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.25rem;
+    margin-top: 0.75rem;
+  }
+}

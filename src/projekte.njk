@@ -19,18 +19,35 @@ eleventyNavigation:
       <nav>
         <ul class="grid grid--4col" style="padding-left: 0; margin: 0; list-style: none;">
           {%- for entry in navPages %}
-            <li{% if entry.url == page.url %} class="my-active-class"{% endif %}>
-              <a href="{{ entry.url }}" class="card">
-                <div class="card__image-container">
-                  <img src="{{entry.coverImage}}" alt="{{ entry.title }}" eleventy:widths="500" class="card__image"/>
+            <li{% if entry.url == page.url %} class="my-active-class"{% endif %} class="flex1">
+              <a href="{{ entry.url }}" class="project-card">
+                <div class="project-card__image-container">
+                  <img src="{{entry.coverImage}}" alt="{{ entry.title }}" eleventy:widths="500" class="project-card__image"/>
                 </div>
 
-                <div class="card__content">
-                  <p class="card__headline">{{ entry.title }}</p>
+                <div class="project-card__header">
+                  <p class="project-card__headline">
+                    {% if entry.client %}
+                      {{ entry.client }}
+                    {% else %}
+                      {{ entry.title }}
+                    {% endif %}
+                  </p>
+                  <p class="font-brand-mono font--small mt-small mb-0">{{ entry.role }}</p>
                 </div>
 
-                <div class="card__footer">
-                  <p class="font--regular">{{ entry.client }}</p>
+                <div class="project-card__content">
+                  <p class="project-card__teaser">{{ entry.description }}</p>
+                </div>
+
+                <div class="project-card__footer">
+                  <ul class="project-card__tags">
+                    {%- for tag in entry.tags %}
+                      <li>
+                        <code>{{ tag }}</code>
+                      </li>
+                    {%- endfor %}
+                  </ul>
                 </div>
               </a>
             </li>
