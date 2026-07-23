@@ -16,6 +16,10 @@
 
     @media screen and (max-width: $screen-sm) {
       min-width: calc(85vw - 2rem);
-    }  
+    }
+
+    @media screen and (min-width: $screen-sm) and (max-width: $screen-md) {
+      min-width: calc(44vw - 2rem);
+    }
   }
 }
