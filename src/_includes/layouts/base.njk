@@ -3,11 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index,follow">
+    {% if robots %}
+      <meta name="robots" content="{{ robots }}">
+    {% else %}
+      <meta name="robots" content="index,follow">
+    {% endif %}
     <meta name="description" content="{{ description }}">
     <meta name="author" content="Yannick Herzog">
-    <meta name="google-site-verification" content="lct-nC0PoAXywoZpepyfxDeleLPQZEZW_y879g4KDDM" />
+    <meta name="google-site-verification" content="lct-nC0PoAXywoZpepyfxDeleLPQZEZW_y879g4KDDM"/>
     <title>{{ title }} | Yannick Herzog</title>
+    {% if canonical %}
+      <link rel="canonical" href="{{ canonical }}">
+    {% else %}
+      <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    {% endif %}
     <link rel="stylesheet" href="{{ '/css/flexboxgrid.min.css' | url }}">
     <link rel="stylesheet" href="{{ '/css/main.css' | url }}">
     <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
@@ -21,11 +30,119 @@
     <meta property="og:description" content="{{ description }}">
     <meta property="og:image" content="/img/logo.svg">
     <meta property="og:image:secure_url" content="/img/logo.svg">
+    <script eleventy:ignore type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://www.hit-services.net/#yannick",
+            "name": "Yannick Herzog",
+            "jobTitle": "Freelance Full-Stack-Webentwickler, technischer Partner und Lead Engineer für KMU",
+            "url": "https://www.hit-services.net/ueber/",
+            "image": "https://www.hit-services.net/img/yannickherzog.jpg",
+            "email": "info@hit-services.net",
+            "telephone": "+4917123344 94",
+            "knowsAbout": [
+              "Vue.js",
+              "Nuxt",
+              "Node.js",
+              "Directus",
+              "Contao",
+              "TypeScript",
+              "Lit",
+              "Web Components",
+              "Docker",
+              "Webarchitecture",
+              "Webentwicklung",
+              "Webdesign",
+              "Webapplikationen",
+              "Webseiten",
+              "Webshops",
+              "Webservices",
+              "Webhosting",
+              "Webserver",
+              "Websicherheit",
+              "Webperformance",
+              "Weboptimierung",
+              "Webanalyse",
+              "Webmarketing"
+            ],
+            "sameAs": [
+              "https://www.linkedin.com/in/yannick-herzog-7b189051", "https://github.com/siryan2"
+            ],
+            "worksFor": {
+              "@id": "https://www.hit-services.net/#org"
+            }
+          }, {
+            "@type": "ProfessionalService",
+            "@id": "https://www.hit-services.net/#org",
+            "name": "Yannick Herzog IT Services",
+            "alternateName": "HIT Services",
+            "url": "https://www.hit-services.net/",
+            "foundingDate": "2010",
+            "founder": {
+              "@id": "https://www.hit-services.net/#yannick"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Am Storchenturm 2",
+              "postalCode": "77731",
+              "addressLocality": "Willstätt",
+              "addressCountry": "DE"
+            },
+            "areaServed": [
+              "DE", "AT", "CH"
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Leistungen",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Full-Stack-Webentwicklung"
+                  }
+                }, {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Technische Beratung & Lead Engineer"
+                  }
+                }, {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "SaaS- & Produktentwicklung"
+                  }
+                }, {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Wartung, Betrieb & Weiterentwicklung"
+                  }
+                }
+              ]
+            }
+          }, {
+            "@type": "WebSite",
+            "@id": "https://www.hit-services.net/#website",
+            "url": "https://www.hit-services.net/",
+            "name": "Yannick Herzog — technischer Partner und Lead Engineer für KMU",
+            "publisher": {
+              "@id": "https://www.hit-services.net/#org"
+            },
+            "inLanguage": "de-DE"
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
     {% include "header.njk" %}
-    
+
     <main class="page-main">{{ content | safe }}</main>
 
     {% include "footer.njk" %}
@@ -37,19 +154,27 @@
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//stats.hit-services.net/";
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
+    (function () {
+      var u = "//stats.hit-services.net/";
+      _paq.push([
+        'setTrackerUrl', u + 'matomo.php'
+      ]);
       _paq.push(['setSiteId', '3']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      var d = document,
+        g = d.createElement('script'),
+        s = d.getElementsByTagName('script')[0];
+      g.async = true;
+      g.src = u + 'matomo.js';
+      s
+        .parentNode
+        .insertBefore(g, s);
     })();
   </script>
   <!-- End Matomo Code -->
 
   <noscript>
     <!-- Matomo Image Tracker-->
-    <img referrerpolicy="no-referrer-when-downgrade" src="https://stats.hit-services.net/matomo.php?idsite=3&amp;rec=1" style="border:0" alt="" />
+    <img referrerpolicy="no-referrer-when-downgrade" src="https://stats.hit-services.net/matomo.php?idsite=3&amp;rec=1" style="border:0" alt=""/>
     <!-- End Matomo -->
   </noscript>
 </html>
