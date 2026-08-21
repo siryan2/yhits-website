@@ -1,0 +1,83 @@
+---
+permalink: /projekte/ki-gutachten-medizinische-begutachtung.html
+title: KI-gestützte Gutachtenerstellung für die medizinische Begutachtung
+description: Automatisch generierter Gutachten-Vorentwurf auf Basis von Akte, Anamnese und Befunden
+tags:
+  - HTML/CSS
+  - TypeScript
+  - Vue.js
+  - Directus
+  - Node.js
+  - Express
+  - knex.js  
+  - MySQL
+  - Azure
+  - OpenAI
+eleventyNavigation:
+  key: "KI-gestützte Gutachtenerstellung für die medizinische Begutachtung"
+  description: Automatisch generierter Gutachten-Vorentwurf auf Basis von Akte, Anamnese und Befunden.
+  parent: "Projekte"
+  coverImage: "/../public/img/projekte/ludicamed/national-cancer-institute-web.jpg"
+  client: Ludicamed UG
+  role: Lead-Entwickler & Architekt
+  tags:
+  - TypeScript
+  - Vue.js
+  - Directus
+  - Node.js
+  - OpenAI
+  - Azure
+  order: 1
+---
+
+<h2 class="headline">Worum es geht</h2>
+<p>
+  Ärzte, die für Versicherungen und Gerichte medizinische Gutachten erstellen, arbeiten sich für jeden Fall durch umfangreiche Akten: Arztbriefe, OP-Berichte, Bildgebung, Vorbefunde – oft mehrere hundert Seiten. Diese Unterlagen müssen gesichtet, zusammengefasst und für ein juristisch belastbares Gutachten aufbereitet werden. Das kostet viel Zeit, bevor die eigentliche fachliche Bewertung überhaupt beginnt.  
+</p>
+<p>
+  Ludicamed ist eine Webanwendung, die diesen Vorbereitungsteil unterstützt. Sie fasst die Akte automatisch zusammen, strukturiert die medizinischen Informationen und erstellt auf dieser Basis einen Gutachten-Entwurf. Die fachliche und juristische Entscheidung bleibt beim Arzt – die Software nimmt ihm die Fleißarbeit ab, nicht die Verantwortung.
+</p>
+
+<h2 class="headline mt-2">Was gebaut wurde</h2>
+<p>
+  Der Arzt lädt die vollständige Akte hoch. Die Anwendung liest die Dokumente per Texterkennung aus und erzeugt eine strukturierte Zusammenfassung: Unfallhergang, bisheriger Behandlungsverlauf, relevante Vorschäden und die offenen Fragen der Versicherung. Die Zusammenfassung richtet sich nach dem jeweiligen Versicherungstyp, weil sich die Anforderungen zwischen privater Unfallversicherung, Berufsunfähigkeit und gesetzlicher Unfallversicherung deutlich unterscheiden.  
+</p>
+<p>
+  Am Untersuchungstag erfasst der Arzt seine Befunde direkt im System. Daraus und aus der Akte entsteht ein Gutachten-Entwurf inklusive eines Bewertungsvorschlags. Diesen prüft der Arzt anschließend auf Kausalität und Vollständigkeit, bevor er das Gutachten finalisiert und versendet. Jede Version und jeder Bearbeitungsschritt wird nachvollziehbar archiviert.
+</p>
+
+<h2 class="headline mt-2">Wie die KI eingesetzt wird</h2>
+<p>
+  LLM übernehmen hier eine klar umrissene Aufgabe: große Mengen unstrukturierten Text lesen und in eine geordnete Form bringen. Sie ersetzen kein medizinisches Urteil und treffen keine endgültigen Bewertungen.  
+</p>
+<p>Weil im medizinischen Kontext falsche oder erfundene Angaben gefährlich sind, war das ein zentraler Punkt bei der Umsetzung:</p>
+<ul class="mt-1">
+  <li>Fehlende Informationen werden ausdrücklich als „nicht dokumentiert" markiert, statt sie zu ergänzen oder zu raten.</li>
+  <li>Fachliteratur und Richtlinien sind als durchsuchbare Wissensbasis hinterlegt, damit Bewertungsvorschläge auf nachvollziehbaren Quellen beruhen.</li>
+  <li>Jeder Verarbeitungsschritt läuft über einen Arzt, der den Entwurf prüft und freigibt.</li>
+  <li>Alle KI-Aufrufe werden protokolliert (Modell, Kosten, Dauer), sodass Aufwand und Qualität überprüfbar bleiben.</li>
+</ul>
+
+<h2 class="headline mt-2">Technische Umsetzung</h2>
+<p>
+  Das Frontend ist mit Nuxt 3 und Vue 3 gebaut, das Backend auf Directus und einer MariaDB-Datenbank, ergänzt um eigene Endpunkte in Node.js. Die Texterkennung und die Dateiablage laufen über Azure in einem deutschen Rechenzentrum; die Sprachmodell-Anbindung über OpenAI. PDF-Export, ein Editor für die Entwürfe und eine vollständige Versionierung gehören dazu.  
+</p>
+<p>
+  Beim Datenmodell habe ich auf einfache, wartbare Strukturen gesetzt statt auf theoretisch optimale, aber komplexe Lösungen – zum Beispiel flexible JSON-Felder für die stark variierenden medizinischen Messwerte statt hunderter Einzelspalten. Ähnlich pragmatisch die Verschlüsselung: Für eine Zielgruppe aus Ärzten und Juristen war eine serverseitige, aber vollständig nachvollziehbare Lösung sinnvoller als ein technisch aufwändigeres Zero-Knowledge-Verfahren, das im Alltag niemand bedienen kann.
+</p>
+
+<h2 class="headline mt-2">Datenschutz war keine Nebensache</h2>
+<p>
+  Bei Patientendaten gelten harte Anforderungen: DSGVO, ärztliche Schweigepflicht nach § 203 StGB, Datenhaltung in der EU, Auftragsverarbeitungsverträge mit allen beteiligten Dienstleistern. Das war von Anfang an Teil der Architektur und nicht etwas, das am Ende „noch dazukommt". Für den Vertrieb an Versicherungen ist genau dieser Punkt oft entscheidend.
+</p>
+
+<h2 class="headline mt-2">Stand</h2>
+<p>
+  Die Anwendung wurde als funktionsfähiges MVP ausgeliefert und befindet sich in der Erprobung mit echten Fällen. Der Umfang wurde bewusst schlank gehalten, um früh mit realen Nutzern zu validieren, statt Funktionen auf Vorrat zu bauen. Weitere Ausbaustufen sind geplant und werden in abgegrenzten Paketen umgesetzt.
+</p>
+
+<h2 class="headline mt-2">Was Sie daraus mitnehmen können</h2>
+<p>
+  Für dieses Projekt hieß KI-Einsatz nicht, ein LLM an ein Problem zu halten und auf ein gutes Ergebnis zu hoffen. Er hieß: eine konkrete, zeitraubende Aufgabe identifizieren, das Modell eng darauf begrenzen, den Menschen an der richtigen Stelle in der Verantwortung lassen und die rechtlichen Rahmenbedingungen von Anfang an mitdenken. </br>
+  Genau so lässt sich KI auch in kleineren Unternehmen einsetzen: nicht als großer Umbau, sondern an einer klar umrissenen Stelle, an der viel manuelle Arbeit anfällt – mit einem Ergebnis, das überprüfbar und im Betrieb tragfähig ist.
+</p>

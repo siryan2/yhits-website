@@ -101,6 +101,7 @@ a.card {
   }
 
   &__image {
+    aspect-ratio: 16 / 10;
     border: 2px solid var(--c-medium-gray);
     max-width: 100%;
     height: auto;

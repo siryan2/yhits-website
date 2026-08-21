@@ -1,9 +1,20 @@
+@use "../variables" as *;
+
 .project-detail {
 
   &__image {
     max-width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  &__aside {
+    &-inner {
+      @media screen and (min-width: $screen-md) {
+        position: sticky;
+        top: 2rem;
+      }
+    }
   }
 }
 
