@@ -4,13 +4,19 @@ layout: layouts/base.njk
 <section class="container container-fluid project-detail">
   <div class="row">
     <div class="col-xs-12">
-      <h1 class="headline headline--medium headline--brand-bold">{{ title }}</h1>    
+      <h1 class="headline headline--medium headline--brand-bold">{{ title }}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <p class="mt-1">{{ description }}</p>
     </div>
   </div>
 
   <div class="row mt-2">
     <div class="col-xs-12">
-      <img src="{{eleventyNavigation.coverImage}}" alt="Dashboard" eleventy:widths="500,800,1200" class="project-detail__image" />
+      <img src="{{eleventyNavigation.coverImage}}" alt="Dashboard" eleventy:widths="500,800,1200" class="project-detail__image"/>
     </div>
   </div>
 
@@ -19,12 +25,27 @@ layout: layouts/base.njk
       {{ content | safe }}
     </div>
 
-    <aside class="col-xs-12 col-md-4 mt-2--sm">
-      <ul class="list">
-        {%- for tag in tags -%}
-          <li>{{ tag }}</li>
-        {%- endfor -%}
-      </ul>
+    <aside class="col-xs-12 col-md-4 mt-2--sm project-detail__aside">
+      <div class="project-detail__aside-inner">
+        <div class="pa-1 bg-color-white" style="border-radius: var(--border-radius-large); border: 2px solid var(--c-medium-gray)">
+          <h4 class="headline headline--brand-bold text-uppercase">
+            <code style="background: transparent; border: none; padding: 0; margin: 0">Tech-Stack</code>
+          </h4>
+          <ul class="list project-card__tags mt-1">
+            {%- for tag in tags -%}
+              <li>
+                <code>{{ tag }}</code>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+
+        <div class="mt-2 pa-2 bg-color-gradient color-white" style="border-radius: var(--border-radius-large);">
+          <h4 class="headline color-white headline--brand-bold">Ähnliches Projekt geplant?</h4>
+          <p class="font--regular">Ein erstes, unverbindliches Gespräch klärt am schnellsten, ob es passt.</p>
+          <a href="/kontakt/" class="mt-2 btn btn-ghost btn-ghost--light">Erstgesprach anfragen</a>
+        </div>
+      </div>
     </aside>
   </div>
 
