@@ -41,6 +41,50 @@ Formatting/linting follows [Biome 2.x](https://biomejs.dev/) via `biome.json`:
 - Run `npm run build` before pushing; the deploy workflow (`deploy-prod.yml`) fails on a broken build.
 - New content lives in `src/`, static images/assets in `public/`.
 
+## Commit messages / conventional commits
+
+Commit messages follow [Conventional Commits (Angular convention)](https://github.com/angular/angular/blob/main/CONTRIBUTING.md#commit). Format:
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+- `type` is required. Use one of the types below.
+- `scope` is optional (a section of the codebase, e.g. `templates`, `css`).
+- `subject`: imperative mood, lowercase start, no trailing period.
+- `body` + `footer` are optional but encouraged for non-trivial changes.
+
+Types:
+
+| Type | Meaning |
+| ---- | ------- |
+| `feat` | A new feature |
+| `fix` | A bug fix |
+| `docs` | Documentation only changes |
+| `style` | Formatting, whitespace (no code change) |
+| `refactor` | Code change that neither fixes a bug nor adds a feature |
+| `perf` | Performance improvement |
+| `test` | Tests (none exist yet — add them if you can) |
+| `build` | Build system / dependency changes |
+| `ci` | CI workflow changes |
+| `chore` | Other changes, no production impact |
+| `revert` | Reverts a previous commit |
+
+Examples:
+
+```
+feat(templates): add Ludicamed project
+fix(css): fix mobile nav overlap on small screens
+refactor(sass): split _variables.scss into theme files
+docs: link to agents.md in README (if it existed)
+chore(package): update version
+revert: revert "feat: add ludicamed project"
+```
+
 ## Deployment
 
 CI: `.github/workflows/deploy-prod.yml` runs on push to `main`:
