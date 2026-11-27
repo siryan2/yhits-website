@@ -27,6 +27,18 @@ export default async function (eleventyConfig) {
     }
   });
 
+  // Redirects for renamed project pages (old URLs are 404)
+  eleventyConfig.addRedirects({
+    "/alfredbecht-pim-product-catalog-pdf.html": "/projekte/pim-system-mit-direkter-pdf-und-webausgabe.html",
+    "/flinkback-chatbot.html": "/projekte/intelligenter-kurs-chatbot-weiterbildungsanbieter.html",
+    "/flinkback-flow.html": "/projekte/ki-kurs-empfehlungsplattform-weiterbildungsanbieter.html",
+    "/flinkback-retargeting.html": "/projekte/retargeting-komponente-weiterbildungsportale.html",
+    "/hargassnerbw-obs-analyse-vertriebs-app.html": "/projekte/hargassnerbw-obs-analyse-vertriebsassistent-app.html",
+    "/ludicamed-ki-gutachten-medizinische-begutachtung.html": "/projekte/ki-gutachten-medizinische-begutachtung.html",
+    "/meiko-produktkonfigurator.html": "/projekte/waschstrassen-konfigurator-mit-cad-export.html",
+    "/zimmer-group-visitor-management.html": "/projekte/digitales-besuchermanagement-mit-ausweiserstellung.html"
+  });
+
   // Images
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     // output image formats
