@@ -86,7 +86,7 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addCollection("sitemap", function(collectionApi) {
     return collectionApi.getAll().filter(item => {
-      return item.url.endsWith('.html');
+      return item.url === "/" || item.url.endsWith(".html") || item.url.endsWith("/");
     });
   });
 }

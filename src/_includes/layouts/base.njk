@@ -25,11 +25,29 @@
     <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta property="og:title" content="{{ title }} | Yannick Herzog">
+    {%- if og_image -%}
+      <meta name="twitter:image" content="{{ og_image }}">
+    {%- else -%}
+      <meta name="twitter:image" content="/img/logo.svg">
+    {%- endif -%}
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url | url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="/img/logo.svg">
-    <meta property="og:image:secure_url" content="/img/logo.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }} | Yannick Herzog">
+    <meta name="twitter:description" content="{{ description }}">
+    {%- if og_image -%}
+      <meta property="og:image" content="{{ og_image }}">
+      {%- if og_image_width and og_image_height -%}
+        <meta property="og:image:width" content="{{ og_image_width }}">
+        <meta property="og:image:height" content="{{ og_image_height }}">
+      {%- endif -%}
+    {%- else -%}
+      <meta property="og:image" content="/img/logo.svg">
+      <meta property="og:image:secure_url" content="/img/logo.svg">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+    {%- endif -%}
     <script eleventy:ignore type="application/ld+json">
       {
         "@context": "https://schema.org",
