@@ -19,6 +19,9 @@ export default async function (eleventyConfig) {
   eleventyConfig.addPlugin(HtmlBasePlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
+  // Use the last git commit date as page date (sitemap lastmod)
+  eleventyConfig.addGlobalData("date", "git Last Modified");
+
   // Sitemap
   eleventyConfig.addPlugin(sitemap, {
     lastModifiedProperty: "modified",
