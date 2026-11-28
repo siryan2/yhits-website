@@ -26,15 +26,32 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta property="og:title" content="{{ title }} | Yannick Herzog">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ url | url }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="/img/logo.svg">
-    <meta property="og:image:secure_url" content="/img/logo.svg">
+    <meta property="og:site_name" content="Yannick Herzog IT Services">
+    <meta property="og:locale" content="de_DE">
+    {% set ogImage = '/img/yannickherzog.jpg' %}
+    <meta property="og:image" content="{{ site.url }}{{ ogImage }}">
+    <meta property="og:image:secure_url" content="{{ site.url }}{{ ogImage }}">
+    <meta property="og:image:width" content="700">
+    <meta property="og:image:height" content="700">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ title }} | Yannick Herzog">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ ogImage }}">
     <script eleventy:ignore type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}{{ page.url }}#webpage",
+            "url": "{{ site.url }}{{ page.url }}",
+            "isPartOf": {
+              "@id": "https://www.hit-services.net/#website"
+            },
+            "inLanguage": "de-DE"
+          }, {
             "@type": "Person",
             "@id": "https://www.hit-services.net/#yannick",
             "name": "Yannick Herzog",

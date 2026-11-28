@@ -79,14 +79,14 @@ export default async function (eleventyConfig) {
     },
   });
 
-  // Exclude CSS files (for Sitemap.xml)
-  eleventyConfig.addCollection("noCssPages", function (collectionApi) {
-    return collectionApi.getAll().filter((item) => !item.url.startsWith("/css/"));
-  });
-
-  eleventyConfig.addCollection("sitemap", function(collectionApi) {
+  // Sitemap: include all indexable HTML pages (exclude noindex pages)
+  eleventyConfig.addCollection("sitemap", function (collectionApi) {
     return collectionApi.getAll().filter(item => {
-      return item.url.endsWith('.html');
+      if (!item.url || item.url.startsWith("/css/") || item.url.startsWith("/fonts/")) return false;
+      const robots = item.data && item.data.robots ? String(item.data.robots) : "";
+      if (/noindex/i.test(robots)) return false;
+      // Only real HTML documents belong in the sitemap
+      return !item.url.endsWith('.xml') && !item.url.endsWith('.txt');
     });
   });
 }
