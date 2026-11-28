@@ -22,9 +22,9 @@ export default async function (eleventyConfig) {
   // Use the last git commit date as page date (sitemap lastmod)
   eleventyConfig.addGlobalData("date", "git Last Modified");
 
-  // Sitemap
+  // Sitemap (lastmod falls back to each page's git last-modified date via the
+  // `date` global data set above; no per-page `modified` property is used)
   eleventyConfig.addPlugin(sitemap, {
-    lastModifiedProperty: "modified",
     sitemap: {
       hostname: "https://www.hit-services.net"
     }
